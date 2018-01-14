@@ -94,8 +94,6 @@ func GetSeats(w http.ResponseWriter, r *http.Request) {
 
 	var seats []Seat
 
-	log.Print("ABOUT TO CREATE TRY...")
-
 	seats, tryError := GetReservedSeats(routeID)
 
 	if tryError != nil {

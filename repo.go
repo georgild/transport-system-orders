@@ -52,8 +52,6 @@ func GetReservedSeats(routeID string) ([]Seat, error) {
 		return result, err
 	}
 
-	log.Print(routeID)
-
 	var orders []Order
 	gameQuery := bson.M{"routeid": routeID}
 	err = session.DB("main").C("orders").Find(gameQuery).All(&orders)
